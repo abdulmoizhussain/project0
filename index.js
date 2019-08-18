@@ -57,7 +57,7 @@ trackRoute.post('/', (req, res) => {
     storage: storage,
     limits: {
       fields: 1,
-      fileSize: 6000000,
+      fileSize: 10000000,
       files: 1,
       parts: 2
     },
