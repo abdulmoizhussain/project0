@@ -64,7 +64,9 @@ trackRoute.post('/', (req, res) => {
   });
   upload.single('track')(req, res, (err) => {
     if (err) {
-      return res.status(400).json({ message: "Upload Request Validation Failed." });
+      return res.status(400).json({
+        message: `Upload Request Validation Failed. ${err.message}.`
+      });
     } else if (!req.body.name) {
       return res.status(400).json({ message: "No track name in request body." });
     }
